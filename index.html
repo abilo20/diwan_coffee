@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Diwan Coffee — ديوان القهوة. Coffee, fresh juice, breakfast & cafe favorites in Dessie, Ethiopia.">
+
+  <title>Diwan Coffee | ديوان القهوة</title>
+  <link rel="icon" type="image/png" href="img/logo.jpg">
+  <link rel="apple-touch-icon" href="img/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Love+Ya+Like+A+Sister&display=swap" rel="stylesheet">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="pattern-layer" aria-hidden="true"></div>
+
+  <header class="site-header" id="top">
+    <div class="container nav-shell">
+      <a class="brand" href="#home" aria-label="Diwan Coffee home">
+        <span class="brand-logo">
+          <img src="img/logo.jpg" alt="Diwan Coffee logo">
+        </span>
+        <span>
+          <strong>Diwan Coffee</strong>
+          <small>ديوان القهوة</small>
+        </span>
+      </a>
+
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#about">About Us</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#reviews">Reviews</a>
+        <a class="nav-cta" href="#contact">Contact Us <i data-lucide="arrow-up-right"></i></a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="nav-action" id="favorites-btn" type="button" aria-label="View Likes">
+          <i data-lucide="heart"></i>
+          <span class="action-count" id="favorites-count">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section-dark" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="hero-notes">
+            <span><i data-lucide="coffee"></i> Coffee house</span>
+            <span><i data-lucide="citrus"></i> Juice bar</span>
+            <span><i data-lucide="utensils"></i> Cafe bites</span>
+          </div>
+          <h1>Good moments<br><span>taste better.</span></h1>
+          <p class="hero-text">Fresh juices, rich coffee, breakfast and cafe favorites served in a welcoming place in Dessie.</p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#menu">Explore Menu <i data-lucide="arrow-up-right"></i></a>
+            <a class="button button-outline-light" href="https://maps.app.goo.gl/DMxKYLvUozrteW5Z7" target="_blank" rel="noopener">Find Us <i data-lucide="map-pin"></i></a>
+          </div>
+
+        </div>
+
+        <div class="hero-art">
+          <div class="orange-disc"></div>
+          <img class="hero-image" src="gallery/checolate.jpg" alt="Diwan Coffee drinks and food">
+        </div>
+      </div>
+      <div class="organic-divider divider-light" aria-hidden="true"></div>
+    </section>
+
+    <section class="section section-cream" id="menu">
+      <div class="container">
+        <div class="section-heading centered">
+          <p class="eyebrow">OUR MENU</p>
+          <h2>Fresh picks from Diwan</h2>
+          <p>Explore our featured drinks and dishes below.</p>
+        </div>
+
+        <div class="menu-toolbar">
+          <input id="menu-search" type="search" placeholder="Search drinks or food..." aria-label="Search menu">
+
+          <div class="filter-buttons" id="filter-buttons">
+            <button class="filter-button active" data-filter="all" type="button">
+              <span class="filter-img"><img src="gallery/fall.jpg" alt="All"></span>
+              <span class="filter-label">All</span>
+            </button>
+            <button class="filter-button" data-filter="breakfast" type="button">
+              <span class="filter-img"><img src="gallery/fbreakfast.jpg" alt="Breakfast"></span>
+              <span class="filter-label">Breakfast</span>
+            </button>
+            <button class="filter-button" data-filter="lunch" type="button">
+              <span class="filter-img"><img src="gallery/flunch.jpg" alt="Lunch"></span>
+              <span class="filter-label">Lunch</span>
+            </button>
+             <button class="filter-button" data-filter="desserts" type="button">
+             <span class="filter-img"><img src="gallery/Fdesserts.jpg" alt="Desserts"></span>
+              <span class="filter-label">Desserts</span>
+            </button>
+            <button class="filter-button" data-filter="juice" type="button">
+              <span class="filter-img"><img src="gallery/fjuice.jpg" alt="Juice"></span>
+              <span class="filter-label">Juice</span>
+            </button>
+            <button class="filter-button" data-filter="burger" type="button">
+              <span class="filter-img"><img src="gallery/fburger.jpg" alt="Burger"></span>
+              <span class="filter-label">Burger</span>
+            </button>
+            <button class="filter-button" data-filter="pizza" type="button">
+              <span class="filter-img"><img src="gallery/fpizza.jpg" alt="Pizza"></span>
+              <span class="filter-label">Pizza</span>
+            </button>
+            <button class="filter-button" data-filter="hot drinks" type="button">
+              <span class="filter-img"><img src="gallery/fhotdrinks.jpg" alt="Hot drinks"></span>
+              <span class="filter-label">Hot drinks</span>
+            </button>
+            <button class="filter-button" data-filter="cold drinks" type="button">
+              <span class="filter-img"><img src="gallery/fcolddrinks.jpg" alt="Cold drinks"></span>
+              <span class="filter-label">Cold drinks</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="product-grid" id="featured-products"></div>
+
+        <div class="center-action">
+          <a class="text-link" href="menu.html">View full menu <i data-lucide="arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
+
+   <section class="section section-white" id="about">
+  <div class="container split-grid">
+    <div class="image-frame image-frame-large">
+      <img src="https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Ftse4.mm.bing.net%2Fth%2Fid%2FOIP.d5JJjB2EH7I4ZktAtVKanAHaE8%3Fr%3D0%26pid%3DApi&sp=1791455555Tf4404fba310f7fb96bf64e1a2d0866d7546dfa5624acbd1a848d8b483aa1d393" alt="Diwan Coffee interior">
+      <span class="stamp">Diwan<br><small>ديوان</small></span>
+    </div>
+
+    <div class="section-copy">
+      <p class="eyebrow">ABOUT DIWAN</p>
+      <h2>Fresh taste.<br><span>Real local hospitality.</span></h2>
+      <p>Diwan Coffee — ديوان القهوة — is a beloved gathering spot located in Dessie, Ethiopia. We serve rich Ethiopian coffee, freshly blended juices, and delicious cafe bites. More than just coffee — it's a cafe where friends meet, students study, and families share good moments.</p>
+      <p>Whether you are stopping by for your morning coffee, a quick lunch, or a relaxing evening juice with friends, we welcome you with warmth and quality service. Check our latest updates on TikTok or navigate straight to us on Google Maps.</p>
+
+      <div class="button-group">
+        <a class="button button-dark" href="https://maps.app.goo.gl/DMxKYLvUozrteW5Z7" target="_blank" rel="noopener">
+          Find us on Google Maps <i data-lucide="map-pin"></i>
+        </a>
+        <a class="button button-dark" href="About.html">Discover our story <i data-lucide="arrow-up-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section class="section section-pattern">
+      <div class="container">
+        <div class="section-heading centered">
+          <p class="eyebrow">WHY DIWAN?</p>
+          <h2>A little freshness in every visit</h2>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <span class="feature-icon"><i data-lucide="coffee"></i></span>
+            <h3>Fresh coffee</h3>
+            <p>Ethiopian macchiatos and quality beans.</p>
+          </article>
+
+          <article class="feature-card">
+            <span class="feature-icon"><i data-lucide="citrus"></i></span>
+            <h3>Fresh juice</h3>
+            <p>Fruit-based drinks for a bright break.</p>
+          </article>
+
+          <article class="feature-card">
+            <span class="feature-icon"><i data-lucide="utensils"></i></span>
+            <h3>Cafe favorites</h3>
+            <p>Breakfast, lunch, and cafe bites.</p>
+          </article>
+
+          <article class="feature-card">
+            <span class="feature-icon"><i data-lucide="heart-handshake"></i></span>
+            <h3>Warm service</h3>
+            <p>Friendly hospitality from the first hello.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+ 
+   <!-- TikTok videos section -->
+<section class="tiktok-section" id="tiktok">
+  <div class="container">
+    <div class="section-heading centered">
+      <a href="https://www.tiktok.com/@ami_seid" target="_blank" rel="noopener">TikTok</a>
+      <h2>FOLLOW US ON TIKTOK</h2>
+      <p>Watch our latest videos and cafe moments.</p>
+    </div>
+
+    <div class="tiktok-grid">
+      <!-- Video 1 -->
+      <div class="tiktok-embed-wrap">
+        <iframe
+          src="https://www.tiktok.com/player/v1/7680485373994126599?_r=1&_t=ZS-9AMBSD4tW8m"
+          allow="fullscreen"
+          loading="lazy"
+          title="Diwan Coffee TikTok video 1">
+        </iframe>
+      </div>
+
+      <!-- Video 2 -->
+      <div class="tiktok-embed-wrap">
+        <iframe
+          src="https://www.tiktok.com/player/v1/7657474623696669970?_r=1&_t=ZS-9ALwmD8D0AZ"
+          
+          allow="fullscreen"
+          loading="lazy"
+          title="Diwan Coffee TikTok video 2">
+        </iframe>
+      </div>
+    </div>
+
+    <div class="center-action" style="margin-top:30px;">
+      <a class="button button-dark" href="https://www.tiktok.com/@ami_seid" target="_blank" rel="noopener">
+        Open TikTok  <i data-lucide="arrow-up-right"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+    <section class="section section-white" id="gallery">
+      <div class="container">
+        <div class="section-heading row-heading">
+          <div>
+            <p class="eyebrow">OUR GALLERY</p>
+            <h2>Moments worth sharing</h2>
+          
+          </div>
+          <a class="text-link" href="https://www.tiktok.com/@ami_seid" target="_blank" rel="noopener">View TikTok <i data-lucide="arrow-up-right"></i></a>
+        </div>
+
+        <div class="gallery-grid" id="gallery-grid"></div>
+      </div>
+    </section>
+
+    <!-- Customer Reviews Section -->
+<section class="section section-cream" id="reviews">
+  <div class="container">
+    <div class="section-heading centered">
+      <p class="eyebrow">CUSTOMER REVIEWS</p>
+      <h2>What guests are saying</h2>
+      <p>Real feedback from people who visited Diwan Coffee.</p>
+    </div>
+
+    <div class="reviews-carousel" id="reviews-carousel">
+      <!-- Review 1 -->
+      <article class="review-card">
+        <div class="review-stars" aria-label="5 out of 5 stars">
+          <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+        </div>
+        <p class="review-text">"The macchiato here is unreal — rich, smooth, and served with a smile. Best coffee spot in Dessie."</p>
+        <div class="review-author">
+          <div class="review-avatar">A</div>
+          <div>
+            <strong>Abebe T.</strong>
+            <small>Local Guide</small>
+          </div>
+        </div>
+      </article>
+
+      <!-- Review 2 -->
+      <article class="review-card">
+        <div class="review-stars" aria-label="5 out of 5 stars">
+          <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+        </div>
+        <p class="review-text">"Fresh avocado juice and pancakes for breakfast — everything was delicious. Very clean and welcoming."</p>
+        <div class="review-author">
+          <div class="review-avatar">S</div>
+          <div>
+            <strong>Sara M.</strong>
+            <small>Regular guest</small>
+          </div>
+        </div>
+      </article>
+
+      <!-- Review 3 -->
+      <article class="review-card">
+        <div class="review-stars" aria-label="5 out of 5 stars">
+          <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+        </div>
+        <p class="review-text">"Cozy atmosphere, great service, and the special burger is worth every birr. My new favorite spot."</p>
+        <div class="review-author">
+          <div class="review-avatar">Y</div>
+          <div>
+            <strong>Yonas K.</strong>
+            <small>Food blogger</small>
+          </div>
+        </div>
+      </article>
+
+      <!-- Review 4 (hidden initially) -->
+      <article class="review-card" aria-hidden="true">
+        <div class="review-stars" aria-label="5 out of 5 stars">
+          <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+        </div>
+        <p class="review-text">"Perfect place to work remotely. Fast Wi-Fi, quiet corner tables, and the coffee keeps coming."</p>
+        <div class="review-author">
+          <div class="review-avatar">H</div>
+          <div>
+            <strong>Hanna B.</strong>
+            <small>Freelancer</small>
+          </div>
+        </div>
+      </article>
+
+      <!-- Review 5 (hidden initially) -->
+      <article class="review-card" aria-hidden="true">
+        <div class="review-stars" aria-label="5 out of 5 stars">
+          <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+        </div>
+        <p class="review-text">"We came as a family and everyone found something they loved. The spris juice is a must-try!"</p>
+        <div class="review-author">
+          <div class="review-avatar">D</div>
+          <div>
+            <strong>Daniel A.</strong>
+            <small>Family visit</small>
+          </div>
+        </div>
+      </article>
+
+      <!-- Review 6 (hidden initially) -->
+      <article class="review-card" aria-hidden="true">
+       <div class="review-stars" aria-label="4 out of 5 stars">
+  <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+</div>
+        <p class="review-text">"Friendly staff, beautiful presentation, and the pizza was hot and fresh. Highly recommended!"</p>
+        <div class="review-author">
+          <div class="review-avatar">M</div>
+          <div>
+            <strong>Meron G.</strong>
+            <small>First visit</small>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- Carousel Controls -->
+    <div class="reviews-controls">
+      <button class="reviews-nav" id="reviews-prev" type="button" aria-label="Previous reviews">
+        <i data-lucide="arrow-left"></i>
+      </button>
+
+      <div class="reviews-dots" id="reviews-dots" role="tablist">
+        <button class="reviews-dot active" type="button" data-page="0" aria-label="Show reviews 1-3"></button>
+        <button class="reviews-dot" type="button" data-page="1" aria-label="Show reviews 4-6"></button>
+      </div>
+
+      <button class="reviews-nav" id="reviews-next" type="button" aria-label="Next reviews">
+        <i data-lucide="arrow-right"></i>
+      </button>
+    </div>
+  </div>
+</section>
+
+    <section class="cta-section" id="contact">
+      <div class="organic-divider divider-dark" aria-hidden="true"></div>
+      <div class="container cta-inner">
+        <div>
+          <p class="eyebrow light">DON'T WAIT</p>
+          <h2>Make your next moment<br><span>taste better.</span></h2>
+          <p> Diwan Coffee location in google maps.</p>
+        </div>
+        <a class="button button-light" href="https://maps.app.goo.gl/DMxKYLvUozrteW5Z7" target="_blank" rel="noopener">Location <i data-lucide="arrow-up-right"></i></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand footer-brand" href="#home">
+          <span class="brand-logo">
+            <img src="img/logo.jpg" alt="Diwan Coffee logo">
+          </span>
+          <span>
+            <strong>Diwan Coffee</strong>
+            <small>ديوان القهوة</small>
+          </span>
+        </a>
+        <p>Fresh coffee, cafe comfort and good moments in Dessie.</p>
+        <address>
+          Dessie, Ethiopia<br>
+          Coffee  · Cafe
+        </address>
+
+        <div class="social-links">
+          <a href="tel:+251000000000" aria-label="Call us" class="social-phone">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          </a>
+          <a href="https://www.tiktok.com/@ami_seid" target="_blank" rel="noopener" aria-label="TikTok" class="social-tiktok">
+            <svg viewBox="0 0 24 24" class="tiktok-icon"><path d="M12.525 2.074a.081.081 0 0 0-.081.081v13.528a2.532 2.532 0 1 1-2.532-2.532c.218 0 .43.028.633.08a.082.082 0 0 0 .102-.078V9.11a.081.081 0 0 0-.063-.079 6.534 6.534 0 0 0-1.206-.112 6.586 6.586 0 1 0 6.586 6.586V8.653a10.59 10.59 0 0 0 5.422 1.503.082.082 0 0 0 .082-.082V6.03a.081.081 0 0 0-.082-.081 6.558 6.558 0 0 1-4.328-1.614 6.588 6.588 0 0 1-1.785-2.261.08.08 0 0 0-.075-.048h-2.772z"></path></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h3>Explore</h3>
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#about">About Us</a>
+        <a href="#gallery">Gallery</a>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+        <a href="https://maps.app.goo.gl/DMxKYLvUozrteW5Z7" target="_blank" rel="noopener">Dessie, Ethiopia · Google Maps</a>
+        <a href="tel:+251000000000">Call us</a>
+        <a href="https://www.tiktok.com/@ami_seid" target="_blank" rel="noopener">TikTok @ami_seid</a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> Diwan Coffee · ديوان القهوة.</span>
+      <span>Powered by Abilo</span>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="icon-button lightbox-close" aria-label="Close image"><i data-lucide="x"></i></button>
+    <img id="lightbox-image" alt="">
+  </div>
+
+  <div class="favorites-overlay" id="favorites-overlay"></div>
+  <aside class="favorites-drawer" id="favorites-drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <h2>Your Likes</h2>
+      <button class="drawer-close" id="favorites-close-btn" aria-label="Close favorites"><i data-lucide="x"></i></button>
+    </div>
+    <div class="favorite-items" id="favorites-items"></div>
+  </aside>
+
+  <!-- MOBILE BOTTOM NAVIGATION -->
+  <nav class="mobile-bottom-nav" aria-label="Mobile navigation">
+    <ul>
+      <li><a href="index.html#home" data-nav="home"><i data-lucide="home"></i><span>Home</span></a></li>
+      <li><a href="menu.html" data-nav="menu"><i data-lucide="coffee"></i><span>Menu</span></a></li>
+      <li><a href="About.html" data-nav="about"><i data-lucide="info"></i><span>About</span></a></li>
+      <li><a href="index.html#gallery" data-nav="gallery"><i data-lucide="image"></i><span>Gallery</span></a></li>
+      <li>
+        <button type="button" id="mobile-favorites-btn" aria-label="Likes">
+          <i data-lucide="heart"></i>
+          <span>Likes</span>
+          <span class="mobile-fav-count" id="mobile-fav-count" style="display:none;">0</span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+
+  <script src="js/menu.js"></script>
+  <script src="js/main.js"></script>
+  <script async src="https://www.tiktok.com/embed.js"></script>
+</body>
+</html>

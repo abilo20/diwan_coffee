@@ -1,0 +1,2121 @@
+/* =========================
+   Diwan Coffee - ديوان القهوة
+   Cafe & Coffee Shop Styles
+   ========================= */
+
+:root {
+  --brown: #291b16;
+  --brown-2: #4b291c;
+  --orange: #f7941d;
+  --cream: #fff2dc;
+  --beige: #f7e4c7;
+  --white: #fff;
+  --ink: #2d2622;
+  --muted: #766d66;
+  --line: rgba(41, 27, 22, 0.12);
+  --shadow: 0 18px 45px rgba(41, 27, 22, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 110px;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "DM Sans", sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+  padding-bottom: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  width: min(1120px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.pattern-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.18;
+  z-index: -1;
+  background-image: radial-gradient(
+    circle at 20px 20px,
+    transparent 0 17px,
+    rgba(75, 41, 28, 0.12) 18px 19px,
+    transparent 20px
+  );
+  background-size: 70px 70px;
+}
+
+/* =========================
+   Header & Navigation
+   ========================= */
+
+.site-header {
+  position: absolute;
+  top: 22px;
+  left: 0;
+  width: 100%;
+  z-index: 20;
+}
+
+.nav-shell {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  background: var(--white);
+  border-radius: 999px;
+  padding: 10px 14px 10px 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background: #f59a23;
+  border: 3px solid #fff;
+  flex-shrink: 0;
+}
+
+.brand-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.brand strong {
+  display: block;
+  font-family: "Love Ya Like A Sister";
+  font-size: 24px;
+  line-height: 1;
+  color: var(--brown);
+}
+
+.brand small {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.2px;
+  font-weight: 600;
+}
+
+.primary-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.primary-nav a {
+  position: relative;
+}
+
+.primary-nav a:not(.nav-cta)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: -8px;
+  height: 2px;
+  background: var(--orange);
+  transition: right 0.2s;
+}
+
+.primary-nav a:hover::after,
+.primary-nav a.active::after {
+  right: 0;
+}
+
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--orange);
+  padding: 12px 18px;
+  border-radius: 999px;
+}
+
+.nav-cta svg,
+.button svg,
+.text-link svg {
+  width: 16px;
+  height: 16px;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+/* =========================
+   Favorites Navigation (Like-only)
+   ========================= */
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-action {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--brown);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-action:hover {
+  background: var(--orange);
+  color: var(--brown);
+  transform: translateY(-2px);
+}
+
+.nav-action svg {
+  width: 19px;
+  height: 19px;
+}
+
+.action-count {
+  position: absolute;
+  top: -4px;
+  right: -3px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  border-radius: 999px;
+  background: var(--orange);
+  color: var(--brown);
+  border: 2px solid var(--white);
+  display: grid;
+  place-items: center;
+  font-size: 9px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* =========================
+   Layout Sections
+   ========================= */
+
+.section {
+  padding: 100px 0;
+}
+
+.section-dark {
+  background: var(--brown);
+  color: var(--white);
+}
+
+.section-white {
+  background: var(--white);
+}
+
+.section-cream {
+  background: var(--cream);
+}
+
+.section-pattern {
+  background: var(--beige);
+}
+
+.section-light {
+  background: var(--beige);
+}
+
+/* =========================
+   Hero Section
+   ========================= */
+
+.hero {
+  padding: 180px 0 145px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 50px;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  color: var(--brown-2);
+  margin: 0 0 14px;
+}
+
+.eyebrow.light {
+  color: #ffc36e;
+}
+
+.hero h1,
+.page-hero h1 {
+  font-family: "Love Ya Like A Sister";
+  font-size: clamp(52px, 6vw, 86px);
+  line-height: 1.02;
+  margin: 0 0 25px;
+  font-weight: 400;
+}
+
+.hero h1 span,
+.section-copy h2 span,
+.cta-inner h2 span {
+  color: var(--orange);
+}
+
+.hero-text {
+  max-width: 470px;
+  color: #eadfd7;
+  font-size: 16px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 30px 0;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 13px 19px;
+  font-weight: 700;
+  font-size: 13px;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-primary {
+  background: var(--orange);
+  color: var(--brown);
+}
+
+.button-dark {
+  background: var(--brown);
+  color: var(--white);
+}
+
+.button-light {
+  background: var(--white);
+  color: var(--brown);
+}
+
+.button-outline-light {
+  border-color: rgba(255, 255, 255, 0.45);
+  color: var(--white);
+}
+
+.hero-notes {
+  display: flex;
+  gap: 22px;
+  color: #d8c7ba;
+  font-size: 12px;
+  flex-wrap: wrap;
+}
+
+.hero-notes span {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+
+.hero-notes svg {
+  width: 16px;
+  color: var(--orange);
+}
+
+.hero-art {
+  position: relative;
+  min-height: 470px;
+  display: grid;
+  place-items: center;
+}
+
+.orange-disc {
+  position: absolute;
+  width: 430px;
+  height: 430px;
+  border-radius: 50%;
+  background: var(--orange);
+  right: 0;
+  top: 20px;
+}
+
+.hero-image {
+  position: relative;
+  width: min(100%, 520px);
+  height: 470px;
+  object-fit: cover;
+  border-radius: 48% 48% 22% 22%;
+  filter: saturate(1.1);
+  box-shadow: var(--shadow);
+  z-index: 1;
+}
+
+/* =========================
+   Organic Dividers
+   ========================= */
+
+.organic-divider {
+  height: 70px;
+  position: absolute;
+  bottom: -1px;
+  left: -2%;
+  width: 104%;
+  background: var(--cream);
+  -webkit-clip-path: polygon(
+    0 45%, 6% 35%, 13% 48%, 21% 28%, 30% 44%,
+    39% 32%, 48% 49%, 58% 27%, 68% 45%, 77% 35%,
+    87% 48%, 94% 31%, 100% 43%, 100% 100%, 0 100%
+  );
+  clip-path: polygon(
+    0 45%, 6% 35%, 13% 48%, 21% 28%, 30% 44%,
+    39% 32%, 48% 49%, 58% 27%, 68% 45%, 77% 35%,
+    87% 48%, 94% 31%, 100% 43%, 100% 100%, 0 100%
+  );
+}
+
+.divider-light {
+  background: var(--cream);
+}
+
+.divider-dark {
+  background: var(--cream);
+  top: -1px;
+  bottom: auto;
+  transform: translateY(-99%);
+}
+
+/* =========================
+   Headings
+   ========================= */
+
+.section-heading {
+  margin-bottom: 42px;
+}
+
+.section-heading.centered {
+  text-align: center;
+  max-width: 720px;
+  margin-inline: auto;
+  margin-bottom: 45px;
+}
+
+.section-heading h2,
+.section-copy h2 {
+  font-family: "Love Ya Like A Sister";
+  font-size: clamp(38px, 4vw, 56px);
+  line-height: 1.1;
+  margin: 0 0 16px;
+  font-weight: 400;
+}
+
+.section-heading p:not(.eyebrow),
+.section-copy p {
+  color: var(--muted);
+  max-width: 650px;
+}
+
+.row-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.text-link {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  color: var(--brown-2);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+/* =========================
+   Menu Toolbar & Filters
+   ========================= */
+
+.menu-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin: 0 0 25px;
+  flex-wrap: wrap;
+}
+
+.menu-toolbar input {
+  width: 320px;
+  border: 1px solid #e5d8c8;
+  border-radius: 999px;
+  padding: 14px 18px;
+  background: #fff;
+  font: inherit;
+  outline-offset: 4px;
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-button {
+  border: 1px solid #e5d8c8;
+  background: #fff;
+  border-radius: 14px;
+  padding: 8px 8px 10px;
+  cursor: pointer;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  min-width: 82px;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.filter-button .filter-img {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--beige);
+  display: grid;
+  place-items: center;
+  border: 2px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.filter-button .filter-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.filter-button .filter-label {
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--brown);
+  letter-spacing: 0.3px;
+}
+
+.filter-button:hover {
+  transform: translateY(-3px);
+}
+
+.filter-button.active {
+  background: var(--orange);
+  border-color: var(--orange);
+}
+
+.filter-button.active .filter-img {
+  border-color: var(--brown);
+}
+
+/* =========================
+   Product Grid
+   ========================= */
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.product-grid-large {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.product-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(41, 27, 22, 0.05);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.product-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+.product-favorite {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--brown);
+  display: grid;
+  place-items: center;
+  z-index: 3;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.product-favorite:hover {
+  transform: scale(1.06);
+  background: var(--orange);
+}
+
+.product-favorite svg {
+  width: 18px;
+  height: 18px;
+}
+
+.product-favorite.active {
+  background: var(--orange);
+  color: var(--brown);
+}
+
+.product-favorite.active svg {
+  fill: currentColor;
+}
+
+.product-info {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.product-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.product-info small {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.product-info h3 {
+  margin: 4px 0;
+  font-size: 18px;
+  line-height: 1.25;
+}
+
+.product-desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.45;
+  margin: 6px 0 16px;
+}
+
+.product-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.price {
+  font-weight: 800;
+  color: var(--brown-2);
+  font-size: 16px;
+}
+
+.center-action {
+  text-align: center;
+  margin-top: 35px;
+}
+
+/* =========================
+   Favorites Drawer (Like-only)
+   ========================= */
+
+.favorites-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(29, 20, 17, 0.55);
+  z-index: 90;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.favorites-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.favorites-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(430px, 100%);
+  height: 100vh;
+  height: 100dvh;
+  background: var(--white);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -20px 0 50px rgba(41, 27, 22, 0.18);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+.favorites-drawer.open {
+  transform: translateX(0);
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 22px;
+  border-bottom: 1px solid var(--line);
+}
+
+.drawer-header h2 {
+  margin: 0;
+  font-family: "Love Ya Like A Sister";
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.drawer-close {
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--cream);
+  color: var(--brown);
+  display: grid;
+  place-items: center;
+}
+
+.drawer-close:hover {
+  background: var(--orange);
+}
+
+.drawer-close svg {
+  width: 18px;
+  height: 18px;
+}
+
+.favorite-items {
+  flex: 1;
+  overflow-y: auto;
+  padding: 18px;
+}
+
+.favorite-item {
+  display: grid;
+  grid-template-columns: 72px 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.favorite-item-image {
+  width: 72px;
+  height: 72px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--beige);
+}
+
+.favorite-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.favorite-item-info h3 {
+  margin: 0 0 4px;
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+.favorite-item-price {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.remove-favorite {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  padding: 5px;
+  display: grid;
+  place-items: center;
+}
+
+.remove-favorite:hover {
+  color: var(--brown);
+}
+
+.remove-favorite svg {
+  width: 16px;
+  height: 16px;
+}
+
+.empty-state {
+  min-height: 280px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 30px;
+  color: var(--muted);
+}
+
+.empty-state-icon {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 15px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--cream);
+  color: var(--brown);
+}
+
+.empty-state-icon svg {
+  width: 23px;
+  height: 23px;
+}
+
+.empty-state h3 {
+  margin: 0 0 7px;
+  color: var(--ink);
+  font-size: 17px;
+}
+
+.empty-state p {
+  margin: 0;
+  font-size: 13px;
+}
+
+/* =========================
+   Split Layout & Features
+   ========================= */
+
+.split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.image-frame {
+  position: relative;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.image-frame img,
+.image-frame video {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+.stamp {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  background: var(--orange);
+  color: var(--brown);
+  padding: 18px;
+  border-radius: 50%;
+  font-family: "Love Ya Like A Sister";
+  font-size: 22px;
+  text-align: center;
+  line-height: 1;
+}
+
+.stamp small {
+  font-family: "DM Sans";
+  font-size: 12px;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.7);
+  padding: 25px;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+}
+
+.feature-card h3 {
+  margin: 0 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+}
+
+.feature-card h3 svg {
+  width: 20px;
+  height: 20px;
+  color: var(--orange);
+}
+
+.feature-card ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.feature-card ul li {
+  margin-bottom: 4px;
+}
+
+.feature-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--orange);
+  color: var(--brown);
+}
+
+.feature-icon svg {
+  width: 22px;
+}
+
+.feature-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* =========================
+   TikTok Embed
+   ========================= */
+
+.tiktok-section {
+  padding: 70px 0;
+  background: var(--white);
+}
+
+.tiktok-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.tiktok-embed-wrap {
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--beige);
+  box-shadow: var(--shadow);
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tiktok-embed-wrap blockquote {
+  margin: 0;
+}
+
+/* =========================
+   Gallery
+   ========================= */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 1fr;
+  grid-auto-rows: 210px;
+  gap: 12px;
+}
+
+.gallery-item {
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  border-radius: 18px;
+  background: var(--beige);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-item.tall {
+  grid-row: span 2;
+}
+
+.gallery-item.wide {
+  grid-column: span 2;
+}
+
+/* =========================
+   Reviews Panel
+   ========================= */
+
+.review-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  background: #fff;
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: var(--shadow);
+}
+
+.review-panel h3 {
+  margin: 8px 0;
+}
+
+.review-panel p {
+  max-width: 650px;
+}
+
+.review-star {
+  color: var(--orange);
+  fill: var(--orange);
+}
+
+/* =========================
+   CTA Section
+   ========================= */
+
+.cta-section {
+  position: relative;
+  background: var(--brown);
+  color: var(--white);
+  padding: 80px 0 95px;
+}
+
+.cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.cta-inner h2 {
+  font-family: "Love Ya Like A Sister";
+  font-weight: 400;
+  font-size: clamp(38px, 4vw, 58px);
+  line-height: 1.05;
+  margin: 0 0 15px;
+}
+
+.cta-inner p:not(.eyebrow) {
+  color: #ddcfc5;
+}
+
+/* =========================
+   Footer
+   ========================= */
+
+.site-footer {
+  background: #1d1411;
+  color: #f6e8d5;
+  padding: 70px 0 25px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+}
+
+.footer-brand {
+  margin-bottom: 18px;
+}
+
+.footer-brand strong {
+  color: #fff;
+}
+
+.footer-brand small {
+  color: #bba99b;
+}
+
+.site-footer p {
+  color: #bba99b;
+  font-size: 13px;
+  max-width: 280px;
+}
+
+.site-footer h3 {
+  font-size: 14px;
+  margin: 0 0 15px;
+  color: var(--orange);
+}
+
+.site-footer a:not(.brand) {
+  display: block;
+  color: #d7c8bc;
+  font-size: 13px;
+  margin: 9px 0;
+}
+
+.site-footer address {
+  color: #bba99b;
+  font-size: 13px;
+  font-style: normal;
+  line-height: 1.7;
+  margin: 16px 0;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  margin-top: 35px;
+  padding-top: 20px;
+  color: #9d8b7d;
+  font-size: 12px;
+}
+
+/* =========================
+   Social Links
+   ========================= */
+
+.social-links {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.social-links a {
+  display: grid !important;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  margin: 0 !important;
+  color: #ffffff;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.social-links svg {
+  width: 17px;
+  height: 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.social-links svg.tiktok-icon {
+  fill: currentColor;
+  stroke: none;
+}
+
+.social-links a:hover {
+  transform: translateY(-2px);
+}
+
+.social-phone:hover {
+  background-color: #25d366;
+  border-color: #25d366;
+}
+
+.social-tiktok:hover {
+  background-color: #000000;
+  border-color: #000000;
+}
+
+/* =========================
+   Page Hero / Secondary Pages
+   ========================= */
+
+.page-hero {
+  padding: 175px 0 120px;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero .section-heading {
+  margin-bottom: 0;
+}
+
+.page-hero h1 {
+  font-size: clamp(48px, 6vw, 76px);
+}
+
+.prose-content {
+  max-width: 950px;
+}
+
+.prose-content h2 {
+  font-family: "Love Ya Like A Sister";
+  font-size: 35px;
+  font-weight: 400;
+  margin-top: 0;
+}
+
+.prose-content p {
+  color: var(--muted);
+}
+
+/* =========================
+   Lightbox
+   ========================= */
+
+.icon-button {
+  display: grid;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  color: inherit;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 12, 9, 0.9);
+  display: none;
+  place-items: center;
+  padding: 30px;
+  z-index: 200;
+}
+
+.lightbox.open {
+  display: grid;
+}
+
+.lightbox img {
+  max-width: min(100%, 1000px);
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 15px;
+}
+
+.lightbox-close {
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  background: white;
+  color: var(--brown);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+/* =========================
+   MOBILE BOTTOM NAVIGATION
+   ========================= */
+
+.mobile-bottom-nav {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--white);
+  border-top: 1px solid var(--line);
+  z-index: 80;
+  padding: 8px 6px calc(8px + env(safe-area-inset-bottom));
+  box-shadow: 0 -6px 20px rgba(41, 27, 22, 0.08);
+}
+
+.mobile-bottom-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 4px;
+}
+
+.mobile-bottom-nav a,
+.mobile-bottom-nav button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 6px 4px;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 12px;
+  transition: background 0.2s ease, color 0.2s ease;
+  position: relative;
+  width: 100%;
+}
+
+.mobile-bottom-nav a svg,
+.mobile-bottom-nav button svg {
+  width: 22px;
+  height: 22px;
+}
+
+.mobile-bottom-nav a.active,
+.mobile-bottom-nav button.active,
+.mobile-bottom-nav a:hover,
+.mobile-bottom-nav button:hover {
+  color: var(--brown);
+  background: var(--cream);
+}
+
+.mobile-bottom-nav a.active svg {
+  color: var(--orange);
+}
+
+.mobile-bottom-nav .mobile-fav-count {
+  position: absolute;
+  top: 0;
+  right: 22%;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: 999px;
+  background: var(--orange);
+  color: var(--brown);
+  font-size: 9px;
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--white);
+}
+
+/* =========================
+   Responsive - Tablet
+   ========================= */
+
+@media (max-width: 900px) {
+  .primary-nav {
+    gap: 14px;
+  }
+
+  .hero-grid,
+  .split-grid {
+    gap: 35px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tiktok-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .gallery-item.wide {
+    grid-column: span 2;
+  }
+
+  .hero-art {
+    min-height: 360px;
+  }
+
+  .hero-image {
+    height: 360px;
+  }
+
+  .orange-disc {
+    width: 330px;
+    height: 330px;
+  }
+}
+
+/* =========================
+   Responsive - Mobile
+   ========================= */
+
+@media (max-width: 700px) {
+  body {
+    padding-bottom: 80px;
+  }
+
+  .site-header {
+    top: 12px;
+  }
+
+  .nav-shell {
+    border-radius: 22px;
+    padding: 10px 14px;
+  }
+
+  .menu-toggle {
+    display: none; /* hidden — using bottom nav on mobile */
+  }
+
+  .primary-nav {
+    display: none !important;
+  }
+
+  .nav-actions {
+    margin-left: auto;
+  }
+
+  .nav-action {
+    width: 38px;
+    height: 38px;
+  }
+
+  .nav-action svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .mobile-bottom-nav {
+    display: block;
+  }
+
+  .hero {
+    padding-top: 145px;
+  }
+
+  .hero-grid,
+  .split-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-copy {
+    order: 1;
+  }
+
+  .hero-art {
+    order: 0;
+    min-height: 300px;
+  }
+
+  .hero-image {
+    height: 300px;
+  }
+
+  .orange-disc {
+    width: 280px;
+    height: 280px;
+  }
+
+  .hero h1 {
+    font-size: 52px;
+  }
+
+  .section {
+    padding: 70px 0;
+  }
+
+  .row-heading,
+  .cta-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .product-grid,
+  .product-grid-large {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .feature-grid,
+  .features-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .tiktok-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    grid-auto-rows: 150px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-grid > div:first-child {
+    grid-column: span 2;
+  }
+
+  .menu-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .menu-toolbar input {
+    width: 100%;
+  }
+
+  .review-panel {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .filter-buttons {
+    justify-content: center;
+  }
+
+  .filter-button {
+    min-width: 72px;
+  }
+
+  .filter-button .filter-img {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* =========================
+   Responsive - Small Phones
+   ========================= */
+
+@media (max-width: 460px) {
+  .container {
+    width: min(100% - 28px, 1120px);
+  }
+
+  .product-grid,
+  .product-grid-large,
+  .feature-grid,
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 220px;
+  }
+
+  .gallery-item.tall,
+  .gallery-item.wide {
+    grid-row: auto;
+    grid-column: auto;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid > div:first-child {
+    grid-column: auto;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .nav-shell {
+    gap: 7px;
+  }
+
+  .brand {
+    gap: 7px;
+  }
+
+  .brand-logo {
+    width: 38px;
+    height: 38px;
+  }
+
+  .brand strong {
+    font-size: 20px;
+  }
+
+  .brand small {
+    font-size: 9px;
+  }
+
+  .nav-actions {
+    gap: 5px;
+  }
+
+  .nav-action {
+    width: 35px;
+    height: 35px;
+  }
+
+  .action-count {
+    min-width: 16px;
+    height: 16px;
+    font-size: 8px;
+  }
+
+  .product-card img {
+    height: 230px;
+  }
+
+  .product-info {
+    padding: 14px;
+  }
+
+  .product-info h3 {
+    font-size: 16px;
+  }
+
+  .favorite-item {
+    grid-template-columns: 62px 1fr auto;
+  }
+
+  .favorite-item-image {
+    width: 62px;
+    height: 62px;
+  }
+
+  .drawer-header {
+    padding: 18px;
+  }
+
+  .favorite-items {
+    padding: 14px;
+  }
+}
+
+/* =========================
+   Reduced Motion
+   ========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+
+/* =========================
+   TikTok Embed
+   ========================= */
+
+.tiktok-section {
+  padding: 70px 0;
+  background: var(--white);
+}
+
+.tiktok-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.tiktok-embed-wrap {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--beige);
+  box-shadow: var(--shadow);
+  aspect-ratio: 9 / 16;   /* TikTok's vertical ratio */
+  max-height: 640px;
+}
+
+.tiktok-embed-wrap iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .tiktok-grid {
+    grid-template-columns: 1fr;
+    max-width: 340px;
+  }
+}
+/* =========================
+   Reviews Carousel
+   ========================= */
+
+.reviews-carousel {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.reviews-carousel.is-fading {
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+.review-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 26px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 10px 30px rgba(41, 27, 22, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.review-stars {
+  display: flex;
+  gap: 3px;
+  color: var(--orange);
+}
+
+.review-stars svg {
+  width: 17px;
+  height: 17px;
+  fill: currentColor;
+  stroke: currentColor;
+}
+
+.review-text {
+  font-size: 14px;
+  color: var(--ink);
+  line-height: 1.65;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+}
+
+.review-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--orange);
+  color: var(--brown);
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.review-author strong {
+  display: block;
+  font-size: 14px;
+  color: var(--brown);
+}
+
+.review-author small {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* Carousel controls */
+.reviews-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.reviews-nav {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--brown);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.reviews-nav:hover {
+  background: var(--orange);
+  color: var(--brown);
+  transform: translateY(-2px);
+}
+
+.reviews-nav:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.reviews-nav svg {
+  width: 18px;
+  height: 18px;
+}
+
+.reviews-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.reviews-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 0;
+  background: rgba(41, 27, 22, 0.2);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.reviews-dot:hover {
+  background: rgba(41, 27, 22, 0.4);
+}
+
+.reviews-dot.active {
+  background: var(--orange);
+  transform: scale(1.3);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .reviews-carousel {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .reviews-carousel {
+    grid-template-columns: 1fr;
+  }
+
+  .reviews-nav {
+    width: 42px;
+    height: 42px;
+  }
+}
+/* =========================
+   About / Split Section — Boxed Side-by-Side Mobile Layout
+   ========================= */
+
+@media (max-width: 700px) {
+  .split-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.05fr;   /* image ~48%, text ~52% */
+    align-items: center;
+    gap: 14px;
+
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    padding: 14px;
+    box-shadow: 0 10px 30px rgba(41, 27, 22, 0.06);
+  }
+
+  /* Image fills its half nicely */
+  .image-frame {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: none;
+    width: 100%;
+  }
+
+  .image-frame img,
+  .image-frame video {
+    width: 100%;
+    height: 260px;          /* taller so it feels substantial */
+    object-fit: cover;
+    display: block;
+    border-radius: 16px;
+  }
+
+  /* Text side */
+  .section-copy {
+    padding: 0;
+  }
+
+  .section-copy h2 {
+    font-size: 26px;
+    line-height: 1.15;
+    margin: 0 0 10px;
+  }
+
+  .section-copy p {
+    font-size: 13px;
+    line-height: 1.55;
+    margin: 0 0 10px;
+  }
+}
+
+/* Small phones — keep side-by-side but slightly tighten */
+@media (max-width: 460px) {
+  .split-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 20px;
+  }
+
+  .image-frame img,
+  .image-frame video {
+    height: 230px;
+  }
+
+  .section-copy h2 {
+    font-size: 22px;
+  }
+
+  .section-copy p {
+    font-size: 12.5px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   About Section — Text wraps around image (mobile)
+   ========================= */
+
+@media (max-width: 700px) {
+
+  /* The whole section becomes one white rounded card */
+  #about .split-grid {
+    display: block;                 /* turn off grid so float works */
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    padding: 16px;
+    box-shadow: 0 10px 30px rgba(41, 27, 22, 0.06);
+  }
+
+  /* Image floats left so text wraps beside and below it */
+  #about .image-frame,
+  #about .image-frame-large {
+    float: left;
+    width: 48%;                     /* takes ~half the card width */
+    margin: 0 14px 10px 0;          /* spacing to the right & below */
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: none;
+    position: relative;
+  }
+
+  #about .image-frame img {
+    width: 100%;
+    height: 260px;                  /* tall enough to feel real */
+    object-fit: cover;
+    display: block;
+    border-radius: 16px;
+  }
+
+  /* Small stamp so it doesn't crowd */
+  #about .image-frame .stamp {
+    right: 6px;
+    bottom: 6px;
+    padding: 8px;
+    font-size: 12px;
+  }
+  #about .image-frame .stamp small {
+    font-size: 8px;
+  }
+
+  /* Text sits beside the image, then continues under it */
+  #about .section-copy {
+    display: block;
+  }
+
+  #about .section-copy .eyebrow {
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin: 0 0 8px;
+  }
+
+  #about .section-copy h2 {
+    font-size: 22px;
+    line-height: 1.15;
+    margin: 0 0 10px;
+  }
+
+  #about .section-copy p {
+    font-size: 12.5px;
+    line-height: 1.55;
+    margin: 0 0 10px;
+  }
+
+  /* Buttons below everything, full width */
+  #about .button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+    clear: both;                    /* push below the floated image */
+  }
+
+  #about .button-group .button {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 12px;
+    justify-content: center;
+  }
+
+  /* Clear the float so the card wraps correctly */
+  #about .split-grid::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+/* Small phones */
+@media (max-width: 460px) {
+  #about .split-grid {
+    padding: 12px;
+    border-radius: 20px;
+  }
+
+  #about .image-frame,
+  #about .image-frame-large {
+    width: 50%;
+    margin: 0 12px 10px 0;
+  }
+
+  #about .image-frame img {
+    height: 230px;
+  }
+
+  #about .section-copy h2 {
+    font-size: 20px;
+  }
+
+  #about .section-copy p {
+    font-size: 11.5px;
+    line-height: 1.5;
+  }
+}
