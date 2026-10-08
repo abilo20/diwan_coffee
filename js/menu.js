@@ -52,7 +52,7 @@ const menuItems = [
 ];
 
 const galleryImages = [
-  'https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.cXM9N8sfmoxwL6Y7N-8sTwHaF7%3Fr%3D0%26pid%3DApi&sp=1791455782T72db8b0ff2363c27bead2430c760b9287036a788028758e78fcbe039dddf9fbd',
+  'img/img1.jpg',
 
   'https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Ftse4.mm.bing.net%2Fth%2Fid%2FOIP.d5JJjB2EH7I4ZktAtVKanAHaE8%3Fr%3D0%26pid%3DApi&sp=1791455555Tf4404fba310f7fb96bf64e1a2d0866d7546dfa5624acbd1a848d8b483aa1d393',
 
