@@ -54,13 +54,10 @@ const menuItems = [
 const galleryImages = [
   'img/img1.jpg',
 
-  'https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Ftse4.mm.bing.net%2Fth%2Fid%2FOIP.d5JJjB2EH7I4ZktAtVKanAHaE8%3Fr%3D0%26pid%3DApi&sp=1791455555Tf4404fba310f7fb96bf64e1a2d0866d7546dfa5624acbd1a848d8b483aa1d393',
-
-  'https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Ftse3.mm.bing.net%2Fth%2Fid%2FOIP.zz-eyQio-fSagkDWR6rMTAHaE6%3Fr%3D0%26pid%3DApi&sp=1791455555T1111988179f5ab7055c3688449cb66e94abcdb41efb87f58da2ab6c2e66a94d1',
-
-  'https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Ftse2.mm.bing.net%2Fth%2Fid%2FOIP.jI-kpJdTm_cNXbn2rCgO1wHaHa%3Fr%3D0%26pid%3DApi&sp=1791456089Tce3caaf53769241a562848162b14be81c7487158896f9d65daca8b40208e2578',
-
-  'https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Ftse2.mm.bing.net%2Fth%2Fid%2FOIP.3YNwl3dRFNF_bMe7ro4A3QHaE7%3Fr%3D0%26pid%3DApi&sp=1791455299Td43c7bb1595265fa673354007ddbec626e2d75d9c6ea8486e7c1c571f96febbd'
+ 'img/img2.jpg',
+ 'img/img3.jpg',
+ 'img/img4.jpg',
+ 'img/img1.jpg',
 ];
 
 function productCard(item) {
