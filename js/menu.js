@@ -12,7 +12,7 @@ const menuItems = [
   { id: 'pasta-with-tomato-sauce', name: 'Pasta with Tomato Sauce', category: 'lunch', description: 'ፓስታ በስጎ', image: 'gallery/pasta_with_tomato_sauce.jpg', price: 130, showOnHome: true },
 
   // Burger
-  { id: 'special-burger', name: 'Special Burger', category: 'burger', description: 'ስፔሻል በርገር', image: 'gallery/normal_burger.jpg', price: 180, showOnHome: true },
+  { id: 'special-burger', name: 'Special Burger', category: 'burger', description: 'ስፔሻል በርገር', image: 'gallery/special_burgers.jpg', price: 180, showOnHome: true },
   { id: 'normal-burger', name: 'Normal Burger', category: 'burger', description: 'ኖርማል በርገር', image: 'gallery/normal_burger.jpg', price: 150 },
   { id: 'cheeseburger', name: 'Cheeseburger', category: 'burger', description: 'ቺዝ በርገር', image: 'gallery/cheeseburger.jpg', price: 170 },
   { id: 'double-burger', name: 'Double Burger', category: 'burger', description: 'ደብል በርገር', image: 'gallery/doubleburger.jpg', price: 220 },
