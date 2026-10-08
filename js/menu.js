@@ -12,7 +12,7 @@ const menuItems = [
   { id: 'pasta-with-tomato-sauce', name: 'Pasta with Tomato Sauce', category: 'lunch', description: 'ፓስታ በስጎ', image: 'gallery/pasta_with_tomato_sauce.jpg', price: 130, showOnHome: true },
 
   // Burger
-  { id: 'special-burger', name: 'Special Burger', category: 'burger', description: 'ስፔሻል በርገር', image: 'gallery/special_burger.jpg', price: 180, showOnHome: true },
+  { id: 'special-burger', name: 'Special Burger', category: 'burger', description: 'ስፔሻል በርገር', image: 'gallery/special_burgers.jpg', price: 180, showOnHome: true },
   { id: 'normal-burger', name: 'Normal Burger', category: 'burger', description: 'ኖርማል በርገር', image: 'gallery/normal_burger.jpg', price: 150 },
   { id: 'cheeseburger', name: 'Cheeseburger', category: 'burger', description: 'ቺዝ በርገር', image: 'gallery/cheeseburger.jpg', price: 170 },
   { id: 'double-burger', name: 'Double Burger', category: 'burger', description: 'ደብል በርገር', image: 'gallery/doubleburger.jpg', price: 220 },
@@ -20,6 +20,7 @@ const menuItems = [
 
   // Pizza
   { id: 'special-pizza', name: 'Special Pizza', category: 'pizza', description: 'ስፔሻል ፒዛ', image: 'gallery/special_pizza.jpg', price: 250, showOnHome: true },
+  { id: 'vegetable-pizza', name: 'vegetable Pizza', category: 'pizza', description: 'የአትክልት ፒዛ ከ ቱና ጋር', image: 'gallery/vegetable_pizza_with_tuna.jpg', price: 250, showOnHome: true },
 
   // Desserts
   { id: 'dubi-checolatelokma', name: 'Dubai Chocolate Lokma', category: 'desserts', description: '', image: 'gallery/dubai_checolate_lokma.jpg', price: 180 , showOnHome: true },
