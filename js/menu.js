@@ -4,7 +4,7 @@ const menuItems = [
   // Breakfast
   { id: 'pancake', name: 'Pancake', category: 'breakfast', description: 'ፓን ኬክ', image: 'gallery/pancake.jpg', price: 60, showOnHome: true },
   { id: 'scrambled-eggs', name: 'Scrambled Eggs', category: 'breakfast', description: 'እንቁላል ፍርፍር', image: 'gallery/scrambled_eggs.jpg', price: 80 },
-  { id: 'boiled-egg', name: 'Boiled Egg', category: 'breakfast', description: 'የተቀቀለ እንቁላል', image: 'gallery/boiled_egg.jpg', price: 40 },
+  
 
   // Lunch
   { id: 'normal-injera-firfir', name: 'Normal Injera Firfir', category: 'lunch', description: 'ኖርማል እንጀራ ፍርፍር', image: 'gallery/normal_injera_firfir.jpg', price: 120 },
@@ -41,9 +41,7 @@ const menuItems = [
   { id: 'coffee', name: 'Coffee', category: 'hot drinks', description: 'ቡና', image: 'gallery/coffee.jpg', price: 40, showOnHome: true },
   { id: 'milk', name: 'Milk', category: 'hot drinks', description: 'ወተት', image: 'gallery/milk.jpg', price: 50 },
   { id: 'macchiato', name: 'Macchiato', category: 'hot drinks', description: 'ማኪያቶ', image: 'gallery/macchiato.jpg', price: 45, showOnHome: true },
-  { id: 'peanut-tea', name: 'Peanut Tea', category: 'hot drinks', description: 'ለውዝ', image: 'gallery/peanut_tea.jpg', price: 55 },
-  { id: 'cappuccino', name: 'Cappuccino', category: 'hot drinks', description: 'ካፑቺኖ', image: 'gallery/cappuccino.jpg', price: 60 },
-
+ 
   // Cold drinks
   { id: 'sprite', name: 'Sprite', category: 'cold drinks', description: 'ስፕራይት', image: 'gallery/sprite.jpg', price: 40 },
   { id: 'coca-cola', name: 'Coca-Cola', category: 'cold drinks', description: 'ኮካ-ኮላ', image: 'gallery/coca_cola.jpg', price: 40 },
