@@ -9,14 +9,13 @@ const menuItems = [
   // Lunch
   { id: 'normal-injera-firfir', name: 'Normal Injera Firfir', category: 'lunch', description: 'ኖርማል እንጀራ ፍርፍር', image: 'gallery/normal_injera_firfir.jpg', price: 120 },
   { id: 'pasta-with-vegetables', name: 'Pasta with Vegetables', category: 'lunch', description: 'ፓስታ በእትክልት', image: 'gallery/pasta_with_vegetables.jpg', price: 140 },
-  { id: 'pasta-with-tomato-sauce', name: 'Pasta with Tomato Sauce', category: 'lunch', description: 'ፓስታ በስጎ', image: 'gallery/pasta_with_tomato_sauce.jpg', price: 130, showOnHome: true },
+  { id: 'pasta-with-tomato-sauce', name: 'Pasta with Tomato Sauce', category: 'lunch', description: 'ፓስታ በስጎ', image: 'gallery/pasta_with_tomato_sauce.jpg', price: 130,},
 
   // Burger
-  { id: 'special-burger', name: 'Special Burger', category: 'burger', description: 'ስፔሻል በርገር', image: 'gallery/special-burger.jpg', price: 180, showOnHome: true },
-  { id: 'normal-burger', name: 'Normal Burger', category: 'burger', description: 'ኖርማል በርገር', image: 'gallery/normal_burger.jpg', price: 150 },
+  { id: 'special-burger', name: 'Special Burger', category: 'burger', description: 'ስፔሻል በርገር', image: 'gallery/normal_burger.jpg', price: 180, showOnHome: true },
   { id: 'cheeseburger', name: 'Cheeseburger', category: 'burger', description: 'ቺዝ በርገር', image: 'gallery/cheeseburger.jpg', price: 170 },
   { id: 'double-burger', name: 'Double Burger', category: 'burger', description: 'ደብል በርገር', image: 'gallery/doubleburger.jpg', price: 220 },
-  { id: 'tuna-burger', name: 'Tuna Burger', category: 'burger', description: 'ቱና በርገር', image: 'gallery/tuna_burger.jpg', price: 190 },
+ // { id: 'tuna-burger', name: 'Tuna Burger', category: 'burger', description: 'ቱና በርገር', image: 'gallery/tuna_burger.jpg', price: 190 },
 
   // Pizza
   { id: 'special-pizza', name: 'Special Pizza', category: 'pizza', description: 'ስፔሻል ፒዛ', image: 'gallery/special_pizza.jpg', price: 250, showOnHome: true },
@@ -32,7 +31,6 @@ const menuItems = [
   // Juice
   { id: 'strawberry-juice', name: 'Strawberry Juice', category: 'juice', description: 'ስትሮበሪ ጁስ', image: 'gallery/strawberry_juice.jpg', price: 100 },
   { id: 'strawberry-shake', name: 'Strawberry Shake', category: 'juice', description: 'ስትሮበሪ ሼክ', image: 'gallery/strawberry_shake.jpg', price: 120 },
-  { id: 'strawberry-with-dates-milk', name: 'Strawberry with Dates & Milk', category: 'juice', description: 'ስትሮበሪ በተምር በወተት', image: 'gallery/strawberry_with_dates_milk.jpg', price: 140 },
   { id: 'avocado-juice', name: 'Avocado Juice', category: 'juice', description: 'አቮካዶ ጁስ', image: 'gallery/avocado_juice.jpg', price: 110 },
   { id: 'mango-juice', name: 'Mango Juice', category: 'juice', description: 'ማንጎ', image: 'gallery/mango_juice.jpg', price: 110 },
 
@@ -43,7 +41,7 @@ const menuItems = [
   { id: 'macchiato', name: 'Macchiato', category: 'hot drinks', description: 'ማኪያቶ', image: 'gallery/macchiato.jpg', price: 45, showOnHome: true },
  
   // Cold drinks
-  { id: 'sprite', name: 'Sprite', category: 'cold drinks', description: 'ስፕራይት', image: 'gallery/sprite.jpg', price: 40 },
+  { id: 'sprite', name: 'Sprite', category: 'cold drinks', description: 'ስፕራይት', image: 'gallery/Sprite.jpg', price: 40 },
   { id: 'coca-cola', name: 'Coca-Cola', category: 'cold drinks', description: 'ኮካ-ኮላ', image: 'gallery/coca_cola.jpg', price: 40 },
   { id: 'fanta', name: 'Fanta', category: 'cold drinks', description: 'ፋንታ', image: 'gallery/fanta.jpg', price: 40 },
   { id: 'mirinda', name: 'Mirinda', category: 'cold drinks', description: 'ሚሪንዳ', image: 'gallery/mirinda.jpg', price: 40 },
